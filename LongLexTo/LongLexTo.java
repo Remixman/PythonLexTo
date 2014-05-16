@@ -109,6 +109,23 @@ public class LongLexTo {
     typeList=new Vector();
     ptree=new LongParseTree(dict, indexList, typeList);
   } //Constructor
+
+  /*******************************************************************/
+  /**************** Constructor (dictionary file name) ***************/
+  /*******************************************************************/
+  public LongLexTo(String filePath) throws IOException {
+
+    dict=new Trie();
+    File dictFile=new File(filePath);
+    if(dictFile.exists())
+      addDict(dictFile);
+    else
+      System.out.println(" !!! Error: Missing default dictionary file, " + filePath);
+    indexList=new Vector();
+    lineList=new Vector();
+    typeList=new Vector();
+    ptree=new LongParseTree(dict, indexList, typeList);
+  } //Constructor
   
   /*******************************************************************/
   /**************************** addDict ******************************/

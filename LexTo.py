@@ -1,12 +1,15 @@
 #!/usr/bin/python
 
 import jpype
+import os
 
 class LexTo (object):
 	def __init__(self):
-		jpype.startJVM(jpype.getDefaultJVMPath(), '-ea', '-Djava.class.path=./LongLexTo')
+		filePath = os.path.abspath(os.path.dirname(__file__))
+		jpype.startJVM(jpype.getDefaultJVMPath(), '-ea', '-Djava.class.path=%s/LongLexTo' % (filePath))
+		
 		LongLexTo = jpype.JClass("LongLexTo")
-		self.lexto = LongLexTo()
+		self.lexto = LongLexTo('%s/lexitron.txt' % (filePath))
 		self.typeString = {}
 		self.typeString[0] = "unknown"
 		self.typeString[1] = "known"
