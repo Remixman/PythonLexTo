@@ -15,12 +15,13 @@ class LexTo (object):
 		self.typeString[4] = "special"
 
 	def tokenize(self, line):
+		line = line.strip()
+	
 		self.lexto.wordInstance(line)
 		typeList = self.lexto.getTypeList()
 		typeList = [self.typeString[n] for n in typeList]
 
-		wordList = []
-		self.lexto.lineInstance(line)    
+		wordList = []  
 		begin = self.lexto.first()
 		while self.lexto.hasNext():
 			end = self.lexto.next()
