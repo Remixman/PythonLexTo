@@ -14,7 +14,7 @@ class LexTo (object):
 		self.typeString[3] = "English/Digits"
 		self.typeString[4] = "special"
 
-	def tokenizer(self, line):
+	def tokenize(self, line):
 		self.lexto.wordInstance(line)
 		typeList = self.lexto.getTypeList()
 		typeList = [self.typeString[n] for n in typeList]
