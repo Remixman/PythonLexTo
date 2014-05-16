@@ -5,8 +5,8 @@ from LexTo import LexTo
 
 
 lexto = LexTo()
-text = "อยากรู้เรื่องยาคูลท์ ถามสาวยาคูลท์สิคะ".decode("utf-8")
+text = u"อยากรู้เรื่องยาคูลท์ ถามสาวยาคูลท์สิคะ"
 words, types = lexto.tokenize(text)
 
-print words
-print types
+print '|'.join(words)
+print '|'.join(types)

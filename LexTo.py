@@ -24,7 +24,7 @@ class LexTo (object):
 		begin = self.lexto.first()
 		while self.lexto.hasNext():
 			end = self.lexto.next()
-			wordList.append( line[begin:end].decode("utf-8") )
+			wordList.append( line[begin:end] )
 			begin = end
 
 		return wordList, typeList
