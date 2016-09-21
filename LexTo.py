@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import jpype
 import os
@@ -22,7 +23,7 @@ class LexTo (object):
 	
 		self.lexto.wordInstance(line)
 		typeList = self.lexto.getTypeList()
-		typeList = [self.typeString[n] for n in typeList]
+		typeList = [self.typeString[n.value] for n in typeList]
 
 		wordList = []  
 		begin = self.lexto.first()
